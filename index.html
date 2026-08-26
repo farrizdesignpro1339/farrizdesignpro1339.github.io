@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>garenafreefiremax1339-ctrl - Kernel Developer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="scanline"></div>
+    <div id="matrix-canvas"></div>
+
+    <nav>
+        <div class="nav-logo">[farrizdesignpro@arch ~]<span class="blink">$</span> </div>
+        <div class="nav-links">
+            <a href="#home" class="active">home</a>
+            <a href="#about">about</a>
+            <a href="#projects">projects</a>
+            <a href="#skills">skills</a>
+            <a href="#contact">contact</a>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="terminal-box">
+            <div class="terminal-header">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+                <span class="terminal-title">bash</span>
+            </div>
+            <div class="terminal-body">
+                <p class="line"><span class="prompt">$</span> whoami</p>
+                <p class="line output glitch" data-text="FarrizDesignPro">FarrizDesignPro</p>
+                <p class="line"><span class="prompt">$</span> cat role.txt</p>
+                <p class="line output">Android Kernel Developer &bull; Custom ROM Enthusiast</p>
+                <p class="line"><span class="prompt">$</span> cat location.txt</p>
+                <p class="line output">Indonesia</p>
+                <p class="line"><span class="prompt">$</span> fastfetch</p>
+                <pre class="line output ascii-art">
+                   -`
+                  .o+`
+                 `ooo/
+                `+oooo:
+               `+oooooo:
+               -+oooooo+:
+             `/:-:++oooo+:
+            `/++++/+++++++:
+           `/++++++++++++++:
+          `/+++ooooooooooooo/`
+         ./oosssso++osssssso+`
+        .oosssso-````/ossssss+`
+       -osssssso.      :ssssssso.
+      :osssssss/        osssso+++.
+     /ossssssss/        +ssssooo/-
+   `/ossssso+/:-        -:/+osssso+-
+  `+sso+:-`                 `.-/+oso:
+ `++:.                           `-/+/
+ .`                                 `/
+                </pre>
+                <p class="line output">
+OS: Arch Linux x86_64<br>
+Host: Lenovo IdeaPad Slim 3<br>
+Kernel: Linux 7.1.9-arch1-2<br>
+Uptime: always running<br>
+Packages: 2190 (pacman), 15 (flatpak)<br>
+Shell: bash 5.3.15<br>
+DE: KDE Plasma 6.7.4<br>
+WM: KWin (Wayland)<br>
+Theme: Darkly [Qt], adw-gtk3-dark [GTK]<br>
+Icons: breeze-dark<br>
+Terminal: kitty 0.48.2<br>
+Terminal Font: JetBrainsMonoNF-Regular (11pt)<br>
+CPU: AMD Ryzen 3 7320U (8) @ 4.15 GHz<br>
+GPU: AMD Radeon 610M [Integrated]<br>
+Memory: 3.55 GiB / 5.60 GiB (63%)<br>
+Disk (/): 373 GiB / 475 GiB (78%) - btrfs<br>
+Focus: Unisoc (UMS9230 / T7250)<br>
+Locale: id_ID.UTF-8
+                </p>
+                <p class="line"><span class="prompt">$</span> <span class="cursor blink">_</span></p>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>[scroll down]</span>
+            <div class="arrow">&#8595;</div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="section-header">
+            <span class="comment">//</span>
+            <h2>about_me</h2>
+            <span class="line-accent"></span>
+        </div>
+        <div class="about-content">
+            <div class="about-card">
+                <div class="card-header">
+                    <span class="file-icon">&#128196;</span>
+                    <span>README.md</span>
+                </div>
+                <div class="card-body">
+                    <p>
+                        Developer focused on <span class="highlight">Android kernel</span> and 
+                        <span class="highlight">custom ROM development</span>. 
+                        Actively developing kernels for Xiaomi devices with <span class="highlight">Unisoc</span> chipsets (serenity/UMS9230).
+                    </p>
+                    <br>
+                    <p>
+                        Experienced in:
+                    </p>
+                    <ul>
+                        <li>Building & modifying Android kernels</li>
+                        <li>Porting TWRP / OrangeFox recovery</li>
+                        <li>Custom ROM (LineageOS)</li>
+                        <li>Device tree development</li>
+                        <li>Unisoc (UMS9230 / T7250) platform</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="section-header">
+            <span class="comment">//</span>
+            <h2>projects</h2>
+            <span class="line-accent"></span>
+        </div>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-header">
+                    <span class="project-icon">&#128736;</span>
+                    <span class="project-badge">vendor</span>
+                </div>
+                <h3>Vendor Blobs</h3>
+                <p>Proprietary blobs for Xiaomi Redmi A5 / POCO C71. Extracted from firmware AP3A.240905.015.A2 (V15.0.11.0.VGWIDXM).</p>
+                <div class="project-tags">
+                    <span>Vendor Blobs</span>
+                    <span>Android 15</span>
+                    <span>LineageOS</span>
+                </div>
+                <a href="https://github.com/garenafreefiremax1339-ctrl/android_vendor_xiaomi_serenity" target="_blank" class="project-link">View Repository &#8594;</a>
+            </div>
+            <div class="project-card">
+                <div class="project-header">
+                    <span class="project-icon">&#128260;</span>
+                    <span class="project-badge">recovery</span>
+                </div>
+                <h3>Custom Recovery</h3>
+                <p>Custom recovery for Xiaomi Redmi A5 / POCO C71. Supports full backup, ADB sideload, and custom partitions.</p>
+                <div class="project-tags">
+                    <span>OrangeFox</span>
+                    <span>Recovery</span>
+                    <span>Android 15</span>
+                </div>
+                <a href="https://drive.google.com/file/d/1Ayx_e8fjB-cV05-R2Q7KKLIW9ldwFAlq/view?usp=drive_link" target="_blank" class="project-link">Download TWRP &#8594;</a>
+                <a href="https://github.com/KSN2redawew/android_device_xiaomi_serenity-twrp/releases/download/Recovery-Serenity/OrangeFox-R12.0_crypto-Beta-serenity.img" target="_blank" class="project-link">Download OrangeFox R12.0 &#8594;</a>
+                <a href="https://drive.google.com/file/d/13xwcRqnq4iWtdKy7j_07hjR3Y030cKeu/view" target="_blank" class="project-link">Download Pitch Black Recovery &#8594;</a>
+            </div>
+            <div class="project-card">
+                <div class="project-header">
+                    <span class="project-icon">&#128260;</span>
+                    <span class="project-badge">recovery</span>
+                </div>
+                <h3>AOSP Recovery</h3>
+                <p>Stock AOSP recovery for Xiaomi Redmi A5 / POCO C71. Minimal recovery for basic sideload and wipe operations.</p>
+                <div class="project-tags">
+                    <span>AOSP</span>
+                    <span>Recovery</span>
+                    <span>Android 15</span>
+                </div>
+                <a href="https://drive.google.com/file/d/1r9VWU4FxcwF-SSy-k0FMX_sCmLagSlYt/view?usp=drivesdk" target="_blank" class="project-link">Download LineageOS 22.0 Recovery &#8594;</a>
+                <a href="https://drive.google.com/file/d/1-rCT5bAZFtQy6aULG33H1CsxuBSAN0uv/view?usp=drivesdk" target="_blank" class="project-link">Download PixelOS 15.0 Recovery &#8594;</a>
+                <!-- <a href="" target="_blank" class="project-link">Download AOSP Recovery &#8594;</a> -->
+            </div>
+            <div class="project-card">
+                <div class="project-header">
+                    <span class="project-icon">&#128241;</span>
+                    <span class="project-badge">rom</span>
+                </div>
+                <h3>Device Tree</h3>
+                <p>Android device tree for Xiaomi Redmi A5 / POCO C71. Build LineageOS with Unisoc T7250 (UMS9230), Android 16.</p>
+                <div class="project-tags">
+                    <span>LineageOS</span>
+                    <span>Android 16</span>
+                    <span>Unisoc</span>
+                </div>
+                <a href="https://github.com/garenafreefiremax1339-ctrl/android_device_xiaomi_serenity" target="_blank" class="project-link">View Repository &#8594;</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="section-header">
+            <span class="comment">//</span>
+            <h2>skills</h2>
+            <span class="line-accent"></span>
+        </div>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h3>&#9656; Kernel</h3>
+                <div class="skill-items">
+                    <div class="skill-item">
+                        <span>Linux Kernel</span>
+                        <div class="skill-bar"><div class="skill-fill" data-width="90"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <span>Android Kernel</span>
+                        <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <span>Device Tree</span>
+                        <div class="skill-bar"><div class="skill-fill" data-width="80"></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3>&#9656; Platform</h3>
+                <div class="skill-items">
+                    <div class="skill-item">
+                        <span>Unisoc/SPRD</span>
+                        <div class="skill-bar"><div class="skill-fill" data-width="90"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <span>UMS9230/T7250</span>
+                        <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3>&#9656; Tools</h3>
+                <div class="skill-items">
+                    <div class="skill-item">
+                        <span>Bash/Shell</span>
+                        <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <span>GCC/Clang</span>
+                        <div class="skill-bar"><div class="skill-fill" data-width="80"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <span>Git</span>
+                        <div class="skill-bar"><div class="skill-fill" data-width="90"></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3>&#9656; Android</h3>
+                <div class="skill-items">
+                    <div class="skill-item">
+                        <span>Custom ROM</span>
+                        <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <span>TWRP Recovery</span>
+                        <div class="skill-bar"><div class="skill-fill" data-width="80"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <span>AOSP</span>
+                        <div class="skill-bar"><div class="skill-fill" data-width="75"></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="section-header">
+            <span class="comment">//</span>
+            <h2>contact</h2>
+            <span class="line-accent"></span>
+        </div>
+        <div class="contact-content">
+            <div class="terminal-box small">
+                <div class="terminal-header">
+                    <span class="dot red"></span>
+                    <span class="dot yellow"></span>
+                    <span class="dot green"></span>
+                    <span class="terminal-title">visitor.sh</span>
+                </div>
+                <div class="terminal-body">
+                    <p class="line"><span class="prompt">$</span> uname -a</p>
+                    <p class="line output">OS: <span id="visitor-os">Detecting...</span></p>
+                    <p class="line output">Host: <span id="visitor-host">Detecting...</span></p>
+                    <p class="line output">Browser: <span id="visitor-browser">Detecting...</span></p>
+                    <p class="line output">Device: <span id="visitor-device">Detecting...</span></p>
+                </div>
+            </div>
+            <div class="terminal-box small">
+                <div class="terminal-header">
+                    <span class="dot red"></span>
+                    <span class="dot yellow"></span>
+                    <span class="dot green"></span>
+                    <span class="terminal-title">contact.sh</span>
+                </div>
+                <div class="terminal-body">
+                    <p class="line"><span class="prompt">$</span> cat contact.sh</p>
+                    <p class="line output">#!/bin/bash</p>
+                    <p class="line output">GITHUB=<a href="https://github.com/garenafreefiremax1339-ctrl" target="_blank">"github.com/garenafreefiremax1339-ctrl"</a></p>
+                    <p class="line output">STATUS="open for collaboration"</p>
+                    <p class="line"><span class="prompt">$</span> echo $STATUS</p>
+                    <p class="line output">open for collaboration</p>
+                </div>
+            </div>
+            <div class="contact-links">
+                <a href="https://github.com/garenafreefiremax1339-ctrl" target="_blank" class="contact-btn">
+                    <span>&#60;/&#62;</span> GitHub
+                </a>
+                <a href="https://github.com/MiCode/Xiaomi_Kernel_OpenSource" target="_blank" class="contact-btn">
+                    <span>&#128225;</span> Xiaomi Kernel
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-line"></div>
+        <p><span class="prompt">$</span> echo "btw i use arch" <span class="comment"># 2026</span></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
