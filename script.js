@@ -82,3 +82,58 @@ function updateVisitorInfo(){
     document.getElementById('visitor-device').textContent=info.deviceType;
 }
 updateVisitorInfo();
+
+// GitHub Stats + Changelog - live from API
+async function loadGitHubStats(){
+  try{
+    const userRes = await fetch('https://api.github.com/users/farrizdesignpro1339');
+    const user = await userRes.json();
+    if(user.public_repos !== undefined){
+      document.getElementById('stat-repos').textContent = user.public_repos;
+      document.getElementById('stat-stars') && (document.getElementById('stat-stars').textContent = '—');
+    }
+    // device-tree
+    const dtRes = await fetch('https://api.github.com/repos/farrizdesignpro1339/android_device_xiaomi_serenity');
+    const dt = await dtRes.json();
+    // vendor
+    const vnRes = await fetch('https://api.github.com/repos/farrizdesignpro1339/android_vendor_xiaomi_serenity');
+    const vn = await vnRes.json();
+    let totalStars = (dt.stargazers_count||0) + (vn.stargazers_count||0);
+    let totalForks = (dt.forks_count||0) + (vn.forks_count||0);
+    document.getElementById('stat-stars').textContent = totalStars;
+    document.getElementById('stat-forks').textContent = totalForks;
+    document.getElementById('stat-device-tree').innerHTML = `<strong>android_device_xiaomi_serenity</strong><br>⭐ ${dt.stargazers_count} · 🍴 ${dt.forks} · 📝 ${dt.open_issues} issues`;
+    document.getElementById('stat-vendor').innerHTML = `<strong>android_vendor_xiaomi_serenity</strong><br>⭐ ${vn.stargazers_count} · 🍴 ${vn.forks} · 📝 ${vn.open_issues} issues`;
+    // commits count via contributors? estimate
+    const commitsRes = await fetch('https://api.github.com/repos/farrizdesignpro1339/android_device_xiaomi_serenity/commits?per_page=1');
+    const link = commitsRes.headers.get('Link');
+    // fallback: fetch commits list for count
+    const allCommits = await fetch('https://api.github.com/repos/farrizdesignpro1339/android_device_xiaomi_serenity/commits?per_page=100');
+    const commits = await allCommits.json();
+    document.getElementById('stat-commits').textContent = Array.isArray(commits) ? commits.length + '+' : '--';
+  }catch(e){
+    console.log('stats error',e);
+    document.getElementById('stat-stars').textContent='0';
+    document.getElementById('stat-repos').textContent='2';
+    document.getElementById('stat-commits').textContent='20+';
+    document.getElementById('stat-forks').textContent='1';
+  }
+}
+async function loadChangelog(){
+  try{
+    const res = await fetch('https://api.github.com/repos/farrizdesignpro1339/android_device_xiaomi_serenity/commits?per_page=5');
+    const commits = await res.json();
+    const list = document.getElementById('changelog-list');
+    if(!Array.isArray(commits) || commits.length===0) throw new Error('no commits');
+    list.innerHTML = commits.map(c=>{
+      const msg = c.commit.message.split('\n')[0];
+      const date = new Date(c.commit.author.date).toLocaleDateString('id-ID',{day:'2-digit',month:'short',year:'numeric'});
+      const author = c.commit.author.name;
+      return `<div class="changelog-item"><div class="changelog-dot"></div><div><div class="changelog-msg">${msg}</div><div class="changelog-meta">${author} · ${date} · <a href="${c.html_url}" target="_blank" style="color:var(--md-primary)">view</a></div></div></div>`;
+    }).join('');
+  }catch(e){
+    document.getElementById('changelog-list').innerHTML = '<p class="changelog-loading">Gagal load changelog. <a href="https://github.com/farrizdesignpro1339/android_device_xiaomi_serenity/commits/main" target="_blank">Buka di GitHub</a></p>';
+  }
+}
+loadGitHubStats();
+loadChangelog();
