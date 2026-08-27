@@ -5,14 +5,16 @@
 html{ color-scheme: light dark; }
 
 :root{
-  --md-primary:#2E7D32;
+  --md-primary:#6750A4;
   --md-on-primary:#FFFFFF;
-  --md-primary-container:#B9F1AB;
-  --md-on-primary-container:#002106;
-  --md-secondary:#55624C;
-  --md-secondary-container:#D9E7CB;
-  --md-tertiary:#38656A;
-  --md-tertiary-container:#BCEBEE;
+  --md-primary-container:#EADDFF;
+  --md-on-primary-container:#21005D;
+  --md-secondary:#625B71;
+  --md-secondary-container:#E8DEF8;
+  --md-tertiary:#2E7D32;
+  --md-tertiary-container:#B9F1AB;
+  --md-gradient: linear-gradient(135deg, #6750A4 0%, #2E7D32 100%);
+  --md-gradient-soft: linear-gradient(135deg, #EADDFF 0%, #B9F1AB 100%);
   --md-error:#BA1A1A;
   --md-surface:#FFFBFE;
   --md-surface-container:#F3EDF7;
@@ -84,7 +86,7 @@ nav{
   content:'';
   width:32px; height:32px;
   border-radius:999px;
-  background: var(--md-primary);
+  background: var(--md-gradient);
   display:inline-block;
   background-image: url("data:image/svg+xml,%3Csvg width='18' height='18' viewBox='0 0 24 24' fill='white' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5'/%3E%3C/svg%3E");
   background-repeat:no-repeat;
@@ -239,8 +241,8 @@ section{
 .section-header h2::after{
   content:'';
   display:block;
-  width:32px; height:4px;
-  background: var(--md-primary);
+  width:48px; height:4px;
+  background: var(--md-gradient);
   border-radius:999px;
   margin-top:6px;
 }
@@ -248,7 +250,7 @@ section{
 
 /* ABOUT CARD - M3 Filled Card */
 .about-card{
-  background: var(--md-primary-container);
+  background: var(--md-gradient-soft);
   border:none;
   border-radius: var(--radius-xl);
   overflow:hidden;
@@ -433,7 +435,7 @@ section{
 }
 .skill-fill{
   height:100%;
-  background: var(--md-primary);
+  background: var(--md-gradient);
   border-radius:999px;
   width:0;
   transition: width 1.2s cubic-bezier(0.2,0,0,1);
@@ -459,7 +461,12 @@ section{
 .stat-icon{ font-size:22px; margin-bottom:8px; }
 .stat-value{
   font-family:'Google Sans','Outfit',sans-serif;
-  font-size:28px; font-weight:800; color: var(--md-primary); line-height:1;
+  font-size:28px; font-weight:800;
+  background: var(--md-gradient);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  background-clip:text;
+  line-height:1;
 }
 .stat-label{ font-size:12px; font-weight:600; color: var(--md-on-surface-variant); margin-top:6px; letter-spacing:0.04em; text-transform:uppercase; }
 .stats-detail{
@@ -497,7 +504,7 @@ section{
 .changelog-item:hover{ background: var(--md-surface-container-high); border-color: var(--md-outline-variant); }
 .changelog-dot{
   width:10px; height:10px;
-  background: var(--md-primary);
+  background: var(--md-gradient);
   border-radius:999px;
   margin-top:6px;
   flex-shrink:0;
@@ -535,7 +542,7 @@ section{
   align-items:center;
   gap:8px;
   padding:14px 24px;
-  background: var(--md-primary);
+  background: var(--md-gradient);
   border:none;
   border-radius: var(--radius-pill);
   color: var(--md-on-primary);
@@ -547,7 +554,7 @@ section{
   transition: all 0.2s cubic-bezier(0.2,0,0,1);
 }
 .contact-btn:hover{
-  background: #4F378B;
+  opacity:0.92;
   color: var(--md-on-primary);
   box-shadow: var(--shadow-2);
   transform: translateY(-1px);
