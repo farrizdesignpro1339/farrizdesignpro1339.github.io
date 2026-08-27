@@ -5,14 +5,14 @@
 html{ color-scheme: light dark; }
 
 :root{
-  --md-primary:#6750A4;
+  --md-primary:#2E7D32;
   --md-on-primary:#FFFFFF;
-  --md-primary-container:#EADDFF;
-  --md-on-primary-container:#21005D;
-  --md-secondary:#625B71;
-  --md-secondary-container:#E8DEF8;
-  --md-tertiary:#7D5260;
-  --md-tertiary-container:#FFD8E4;
+  --md-primary-container:#B9F1AB;
+  --md-on-primary-container:#002106;
+  --md-secondary:#55624C;
+  --md-secondary-container:#D9E7CB;
+  --md-tertiary:#38656A;
+  --md-tertiary-container:#BCEBEE;
   --md-error:#BA1A1A;
   --md-surface:#FFFBFE;
   --md-surface-container:#F3EDF7;
@@ -564,14 +564,14 @@ section{
 /* Monet dynamic - auto dark like phone */
 @media (prefers-color-scheme: dark){
   :root{
-    --md-primary:#D0BCFF;
-    --md-on-primary:#381E72;
-    --md-primary-container:#4F378B;
-    --md-on-primary-container:#EADDFF;
-    --md-secondary:#CCC2DC;
-    --md-secondary-container:#4A4458;
-    --md-tertiary:#EFB8C8;
-    --md-tertiary-container:#633B48;
+    --md-primary:#90D995;
+    --md-on-primary:#003909;
+    --md-primary-container:#20531E;
+    --md-on-primary-container:#B9F1AB;
+    --md-secondary:#BDCBB0;
+    --md-secondary-container:#3E4A37;
+    --md-tertiary:#A0CFD2;
+    --md-tertiary-container:#204E52;
     --md-surface:#141218;
     --md-surface-container:#211F26;
     --md-surface-container-high:#2B2930;
