@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Roboto:wght@400;500;700&family=Roboto+Flex:opsz,wght@8..144,400;8..144,500;8..144,700&family=Outfit:wght@600;700;800&family=Inter:wght@400;500;600&display=swap');
 
 * { margin:0; padding:0; box-sizing:border-box; }
+html{ color-scheme: light dark; }
 
 :root{
   --md-primary:#6750A4;
@@ -476,6 +477,29 @@ section{
 }
 .contact-btn:nth-child(2):hover{
   background: #D8D0E8;
+}
+
+/* Monet dynamic - auto dark like phone */
+@media (prefers-color-scheme: dark){
+  :root{
+    --md-primary:#D0BCFF;
+    --md-on-primary:#381E72;
+    --md-primary-container:#4F378B;
+    --md-on-primary-container:#EADDFF;
+    --md-secondary:#CCC2DC;
+    --md-secondary-container:#4A4458;
+    --md-tertiary:#EFB8C8;
+    --md-tertiary-container:#633B48;
+    --md-surface:#141218;
+    --md-surface-container:#211F26;
+    --md-surface-container-high:#2B2930;
+    --md-surface-container-highest:#36343B;
+    --md-on-surface:#E6E0E9;
+    --md-on-surface-variant:#CAC4D0;
+    --md-outline:#938F99;
+    --md-outline-variant:#49454F;
+  }
+  body{ background: var(--md-surface); }
 }
 
 footer{
