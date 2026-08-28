@@ -524,6 +524,37 @@ section{
 }
 .changelog-more:hover{ background: var(--md-primary); color: var(--md-on-primary); text-decoration:none; }
 
+/* BUILD STATUS - M3 */
+.build-grid{ display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+.build-card{
+  background: var(--md-surface-container);
+  border-radius: var(--radius-lg);
+  padding:18px;
+  border:1.5px solid var(--md-outline-variant);
+}
+.build-header{
+  display:flex; align-items:center; gap:10px; margin-bottom:14px; flex-wrap:wrap;
+}
+.build-icon{ width:36px; height:36px; display:grid; place-items:center; background: var(--md-secondary-container); border-radius:12px; font-size:18px; }
+.build-name{ font-family:'Google Sans','Outfit',sans-serif; font-size:13px; font-weight:700; color: var(--md-on-surface); flex:1; word-break:break-all; }
+.build-badge{
+  font-size:11px; font-weight:700; letter-spacing:0.05em; text-transform:uppercase;
+  padding:6px 10px; border-radius:999px;
+  background: var(--md-surface-container-highest); color: var(--md-on-surface-variant); border:1px solid var(--md-outline-variant);
+}
+.build-badge.success{ background:#B9F1AB; color:#002106; border-color:#90D995; }
+.build-badge.failure{ background:#FFDAD6; color:#410002; border-color:#FFB4AB; }
+.build-badge.pending{ background:#EADDFF; color:#21005D; border-color:#D0BCFF; }
+.build-badge.empty{ background: var(--md-surface-container-highest); color: var(--md-outline); }
+.build-body{ display:flex; flex-direction:column; gap:8px; margin-bottom:14px; }
+.build-row{ display:flex; justify-content:space-between; font-size:13px; color: var(--md-on-surface-variant); border-bottom:1px dashed var(--md-outline-variant); padding-bottom:6px; }
+.build-row span:last-child{ font-weight:600; color: var(--md-on-surface); font-size:12px; }
+.build-link{ font-size:13px; font-weight:600; color: var(--md-primary); text-decoration:none; background: var(--md-primary-container); padding:8px 14px; border-radius:999px; display:inline-flex; }
+.build-link:hover{ background: var(--md-primary); color: var(--md-on-primary); text-decoration:none; }
+.build-note{ margin-top:14px; font-size:12px; color: var(--md-outline); background: var(--md-surface-container); padding:12px 16px; border-radius: var(--radius-md); display:none; }
+.build-note.show{ display:block; }
+@media (max-width:768px){ .build-grid{ grid-template-columns:1fr; } }
+
 @media (max-width:768px){
   .stats-grid{ grid-template-columns:repeat(2,1fr); }
   .stats-detail{ grid-template-columns:1fr; }

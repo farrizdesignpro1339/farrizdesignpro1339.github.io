@@ -137,3 +137,46 @@ async function loadChangelog(){
 }
 loadGitHubStats();
 loadChangelog();
+
+// Build Status - live
+async function loadBuildStatus(){
+  async function checkRepo(repo, prefix){
+    try{
+      const cRes = await fetch(`https://api.github.com/repos/farrizdesignpro1339/${repo}/commits?per_page=1`);
+      const commits = await cRes.json();
+      const last = Array.isArray(commits) && commits[0] ? new Date(commits[0].commit.author.date).toLocaleDateString('id-ID',{day:'2-digit',month:'short',year:'numeric'}) : '--';
+      document.getElementById(`${prefix}-commit`).textContent = last;
+      // workflow runs
+      const wRes = await fetch(`https://api.github.com/repos/farrizdesignpro1339/${repo}/actions/runs?per_page=1`);
+      const wData = await wRes.json();
+      const badge = document.getElementById(`${prefix}-badge`);
+      const workflowEl = document.getElementById(`${prefix}-workflow`);
+      if(wData.total_count===0 || !wData.workflow_runs || wData.workflow_runs.length===0){
+        badge.textContent='no workflow';
+        badge.className='build-badge empty';
+        workflowEl.textContent='not configured';
+        return false;
+      } else {
+        const run = wData.workflow_runs[0];
+        const status = run.conclusion || run.status;
+        badge.textContent = status;
+        if(status==='success') badge.className='build-badge success';
+        else if(status==='failure' || status==='timed_out') badge.className='build-badge failure';
+        else badge.className='build-badge pending';
+        workflowEl.textContent = run.name || 'workflow';
+        return true;
+      }
+    }catch(e){
+      document.getElementById(`${prefix}-commit`).textContent='error';
+      document.getElementById(`${prefix}-badge`).textContent='error';
+    }
+  }
+  const d = await checkRepo('android_device_xiaomi_serenity','build-device');
+  const v = await checkRepo('android_vendor_xiaomi_serenity','build-vendor');
+  const note = document.getElementById('build-note');
+  if(d===false && v===false){
+    note.classList.add('show');
+    note.innerHTML = '💡 Belum ada GitHub Actions workflow. <a href="https://docs.github.com/en/actions/quickstart" target="_blank" style="color:var(--md-primary)">Buat workflow</a> untuk auto build LineageOS (contoh: <code>lunch lineage_serenity && m bacon</code>). Badge akan live otomatis setelah workflow pertama jalan.';
+  }
+}
+loadBuildStatus();
