@@ -651,13 +651,24 @@ a:hover{ text-decoration:underline; }
   nav{
     width: calc(100% - 16px);
     top:8px;
-    padding:8px 12px;
-    gap:8px;
+    padding:8px 10px;
+    gap:10px;
+    flex-direction:row;
+    overflow:hidden;
   }
-  .nav-logo{ font-size:13px; }
+  .nav-logo{ font-size:13px; flex-shrink:0; }
   .nav-logo::before{ width:28px; height:28px; }
-  .nav-links{ gap:4px; }
-  .nav-links a{ font-size:12px; padding:6px 10px; }
+  .nav-links{
+    gap:4px;
+    overflow-x:auto;
+    flex-wrap:nowrap;
+    scrollbar-width:none;
+    -ms-overflow-style:none;
+    -webkit-overflow-scrolling:touch;
+    flex:1;
+  }
+  .nav-links::-webkit-scrollbar{ display:none; }
+  .nav-links a{ font-size:12px; padding:6px 10px; white-space:nowrap; flex-shrink:0; }
   .hero{ padding-top:24px; }
   section{ padding:28px 16px; }
   .glitch{ font-size:32px !important; }
